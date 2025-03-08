@@ -50,7 +50,8 @@ function App() {
     <div className="App w-full h-screen flex flex-col items-center">
       <main className='max-w-4xl mx-auto px-4 py-2 w-full text-balance'>
         <h1 className='text-4xl mt-10 text-center'>How much do you know about general culture?</h1>
-        <p className={`text-center font-medium text-xl my-4 ${status === StatusEnum.Correct ? 'text-green-500' : status === StatusEnum.Incorrect ? 'text-red-500' : 'text-gray-600'}`}>{status}</p>
+        <p className={`${loading ? 'hidden' : ''} text-center font-medium text-xl my-4 ${status === StatusEnum.Correct ? 'text-green-500' : status === StatusEnum.Incorrect ? 'text-red-500' : 'text-gray-600'}`}>{status}</p>
+       
         <h3 className={`${!isAux ? 'hidden' : ''} text-center text-amber-500 text-xl my-4`}>Using aux questions</h3>
 
         {!loading
