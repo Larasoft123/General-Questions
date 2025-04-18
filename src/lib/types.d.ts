@@ -1,14 +1,12 @@
 export interface Question {
-  question: string;
-  answers: Answer[];
-}
+  question: string,
+  answers: string[],
+  correct: number
+  userAnswer?: number,
+};
 
-export interface Answer {
-  respuesta: string;
-  correct: boolean;
-}
-export enum StatusEnum {
-  Correct = "correct",
-  None = "Ninguno seleccionado",
-  Incorrect = "incorrect",
+export enum App_status{
+  INIT = "INIT",
+  FINISH = "FINISH",
+  ASKING = "ASKING",
 }
