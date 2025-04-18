@@ -3,6 +3,7 @@ import { useQuestionsStore } from "./store/questionsStore"
 import { App_status } from "./lib/types.d"
 import { Init } from "./components/init"
 import { Asking } from "./components/Asking"
+import { Finish } from "./components/Finish"
 
 
 
@@ -26,6 +27,7 @@ function App() {
       <main className='max-w-4xl h-full mx-auto px-4 py-2 w-full text-balance'>
         {APP_STATUS == App_status.INIT && <Init />}
         {APP_STATUS == App_status.ASKING && <Asking />}
+        {APP_STATUS == App_status.FINISH && <Finish />}
 
 
 
