@@ -2,11 +2,12 @@
 import { Question } from "../lib/types"
 import { useQuestionsStore } from "../store/questionsStore"
 import { NextButtons } from "./NextButtons"
+import { Footer } from "./Footer"
 
 
 
-function getBg({question,index}: {question: Question,index: number}) {
-    const {correct,userAnswer} = question
+function getBg({ question, index }: { question: Question, index: number }) {
+    const { correct, userAnswer } = question
     if (userAnswer == undefined) return "transparent"
 
     if (correct === index) return "bg-green-500"
@@ -14,7 +15,7 @@ function getBg({question,index}: {question: Question,index: number}) {
     if (index === userAnswer) return "bg-red-500"
 
     return "transparent"
-    
+
 }
 
 export function Asking() {
@@ -23,7 +24,7 @@ export function Asking() {
     const setUserAnswer = useQuestionsStore(state => state.setUserAnswer)
 
 
-    
+
 
     const handleClick = (index: number) => () => {
         setUserAnswer(index)
@@ -36,11 +37,11 @@ export function Asking() {
                 <h1 className="text-2xl text-center text-zinc-500 text-balance">{questions[currentQuestion].question}</h1>
                 <div className="flex flex-col">
                     <header className="flex text-center py-4 px-2 justify-between items-center text-sm text-gray-700">
-                             <NextButtons/>
-                             <span> {currentQuestion+1}/ {questions.length}</span>
+                        <NextButtons />
+                        <span> {currentQuestion + 1}/ {questions.length}</span>
 
 
-                             
+
                     </header>
 
                     <div className="">
@@ -48,8 +49,8 @@ export function Asking() {
                             {questions[currentQuestion].answers.map((answer, index) => {
 
                                 return (
-                                    <li  key={index} className={`flex flex-col gap-2 text-center`}>
-                                        <button onClick={handleClick(index)} className={`${getBg({index,question:questions[currentQuestion]})} bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`}>
+                                    <li key={index} className={`flex flex-col gap-2 text-center`}>
+                                        <button disabled={questions[currentQuestion].userAnswer !== undefined} onClick={handleClick(index)} className={`${getBg({ index, question: questions[currentQuestion] })} bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500`}>
                                             {answer}
                                         </button>
                                     </li>
@@ -59,6 +60,10 @@ export function Asking() {
                         </ul>
                     </div>
 
+
+                    <div className="py-8">
+                        <Footer />
+                    </div>
 
                 </div>
 
