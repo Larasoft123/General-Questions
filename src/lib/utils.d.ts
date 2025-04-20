@@ -489,6 +489,7 @@ export const questionsArray: Question[] = [
 ];
 
 export const optionsInit = [
+  3,
   Math.round(questionsArray.length / 4),
   Math.round(questionsArray.length / 3),
   Math.round(questionsArray.length / 2),
