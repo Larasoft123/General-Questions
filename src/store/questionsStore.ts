@@ -14,6 +14,7 @@ interface QuestionsStore {
   GoBack: () => void;
   checkWin: () => void;
   win: boolean | null;
+  reset: () => void;
 }
 
 function DoConffeti() {
@@ -108,6 +109,16 @@ export const useQuestionsStore = create<QuestionsStore>()(devtools((set, get) =>
         currentQuestion: get().currentQuestion + 1,
       });
     }, 1000);
+  },
+
+
+  reset(){
+    set({
+      currentQuestion: 0,
+      questions: [],
+      App_status: App_status.INIT,
+      win: null,
+    });
   },
 
   GoNext() {
