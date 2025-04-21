@@ -5,12 +5,14 @@ import confetti from "canvas-confetti";
 import { devtools } from "zustand/middleware";
 import { persist } from "zustand/middleware";
 
+
 interface QuestionsStore {
   currentQuestion: number;
   questions: Question[];
   App_status: App_status;
   setQuestions: (nroQuestions: number) => void;
   setUserAnswer: (answer: number) => void;
+  setQuestionsType: (types: string[]) => void;
   GoNext: () => void;
   GoBack: () => void;
   checkWin: () => void;
@@ -51,11 +53,12 @@ export const useQuestionsStore = create<QuestionsStore>()(
     devtools((set, get) => ({
       currentQuestion: 0,
       questions: [],
-      App_status: App_status.INIT,
+      App_status: App_status.CHOSE_TYPE_QUESTIONS,
       win: null,
 
       setQuestions(nroQuestions: number) {
-        const newQuestions = structuredClone(questionsArray)
+        const questionsArray = get().questions
+        const newQuestions = questionsArray
           .sort(() => Math.random() - 0.5)
           .slice(0, nroQuestions);
 
@@ -64,6 +67,18 @@ export const useQuestionsStore = create<QuestionsStore>()(
           questions: newQuestions,
           App_status: App_status.ASKING,
         });
+      },
+
+      setQuestionsType(types: string[]) {
+        if (types.length === 0) return;
+
+        const dataArray = structuredClone(questionsArray)
+
+        const filteredQuestions = dataArray.filter((question) => types.includes(question.type))
+
+        set({questions: filteredQuestions,App_status: App_status.INIT})
+       
+              
       },
 
       checkWin() {
@@ -110,8 +125,8 @@ export const useQuestionsStore = create<QuestionsStore>()(
       reset() {
         set({
           currentQuestion: 0,
-          questions: [],
-          App_status: App_status.INIT,
+          questions: questionsArray,
+          App_status: App_status.CHOSE_TYPE_QUESTIONS,
           win: null,
         });
       },
