@@ -14,7 +14,7 @@ export function Finish() {
 
     return (
         <>
-            {win !== null && <section className="px-4  text-center py-90 ">
+            {win !== null && <section className="px-4  text-center py-60 ">
 
 
                 <h1 className={` text-3xl text-balance mb-8 text-teal-700`}> {message} </h1>
