@@ -1,10 +1,22 @@
-import { optionsInit } from "../lib/utils.d"
+import { useRef } from "react"
+
 import { useQuestionsStore } from "../store/questionsStore"
+
+
 
 
 export function Init() {
 
-    const setQuestions  = useQuestionsStore(state=> state.setQuestions)
+    const setQuestions = useQuestionsStore(state => state.setQuestions)
+    const Questions = useQuestionsStore(state => state.questions)
+
+    const nroOptions = useRef([
+        Math.round(Questions.length / 5),
+        Math.round(Questions.length / 4),
+        Math.round(Questions.length / 3),
+        Math.round(Questions.length / 2),
+        Questions.length,
+    ])
 
     const handleSubmit = (eve: React.FormEvent<HTMLFormElement>) => {
         eve.preventDefault()
@@ -22,6 +34,10 @@ export function Init() {
 
 
 
+
+
+
+
     return (
         <div className='w-full h-full -translate-y-20  p-4 relative flex-col flex justify-center items-center my-6'>
             <h1 className="font-semibold mb-12 text-4xl text-indigo-700 opacity-95 text-center text-balance">Cuanto sabes de capitales del mundo</h1>
@@ -29,7 +45,7 @@ export function Init() {
             <form onSubmit={handleSubmit} className="flex w-full flex-col text-center justify-center items-center">
                 <label htmlFor="numero-paises" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Selecciona cuantas preguntas quieres</label>
                 <select id="numero-paises" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                    {optionsInit.map((option, index) => (
+                    {nroOptions.current.map((option, index) => (
                         <option key={index} value={option}>{option}</option>
                     ))}
                 </select>
