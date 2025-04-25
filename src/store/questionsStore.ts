@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { questionsArray } from "../lib/utils.d";
+import { totalQuestions } from "../lib/utils.d";
 import { Question, App_status } from "../lib/types.d";
 import confetti from "canvas-confetti";
 import { devtools } from "zustand/middleware";
@@ -72,7 +72,7 @@ export const useQuestionsStore = create<QuestionsStore>()(
       setQuestionsType(types: string[]) {
         if (types.length === 0) return;
 
-        const dataArray = structuredClone(questionsArray)
+        const dataArray = structuredClone(totalQuestions)
 
         const filteredQuestions = dataArray.filter((question) => types.includes(question.type))
 
@@ -125,7 +125,7 @@ export const useQuestionsStore = create<QuestionsStore>()(
       reset() {
         set({
           currentQuestion: 0,
-          questions: questionsArray,
+          questions: totalQuestions,
           App_status: App_status.CHOSE_TYPE_QUESTIONS,
           win: null,
         });
