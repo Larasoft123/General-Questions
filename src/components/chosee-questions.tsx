@@ -62,7 +62,7 @@ export function ChooseQuestions() {
 
                 </ul>
 
-                <div className="flex justify-center mt-10 items-center">
+                <div className="mt-10 w-full max-w-70">
 
                     <button className="bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white font-semibold w-full transition ease-in duration-200 text-center text-base py-2 px-4 rounded-lg shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2  cursor-pointer">Continuar</button>
 
