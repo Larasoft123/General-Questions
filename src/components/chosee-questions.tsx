@@ -8,7 +8,7 @@ export function ChooseQuestions() {
 
     const setQuestionsType = useQuestionsStore(state => state.setQuestionsType)
 
-    
+
 
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -17,10 +17,10 @@ export function ChooseQuestions() {
         const types: string[] = []
 
 
-        for(const element of form) {
+        for (const element of form) {
             if (element instanceof HTMLInputElement && element.checked) {
-                isSomeChecked.current = true   
-                types.push(element.id) 
+                isSomeChecked.current = true
+                types.push(element.id)
             }
         }
 
@@ -34,27 +34,33 @@ export function ChooseQuestions() {
     }
 
     return (
-        <section className="w-full h-full  p-4 items-center my-6">
+        <section className="w-full h-full flex justify-center  p-2 items-center ">
 
 
-            <form onSubmit={handleSubmit} className="flex flex-col p-4 justify-center items-center" >
+            <form onSubmit={handleSubmit} className="flex -translate-y-6 flex-col p-4 justify-center items-center" >
 
-                <h3 className="text-xl text-indigo-700 text-balance text-center">Selecciona los tipos de preguntas que quieres</h3>
+                <h3 className="text-xl text-indigo-700 font-semibold text-balance text-center">Selecciona los tipos de preguntas que quieres</h3>
 
-                <div className="mt-6">
+
+                <ul className="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg mt-6">
                     {Object.values(typeQuestions).map((value, index) => {
                         return (
-                            <div key={index} className="flex justify-center items-center my-2">
-                                <input  type="checkbox" id={value} name={value} className="mr-2 rounded-full" />
-                                <label htmlFor={value} className="text-lg text-balance">{value}</label>
+
+
+                         <li key={index} className="w-full  border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+                            <div className="flex items-center  ps-3">
+                                <input id={value} name={value} type="checkbox" className="w-4 h-4 
+                                cursor-pointer text-blue-600 bg-gray-100 border-gray-300 rounded-sm focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500"/>
+
+                                <label htmlFor={value} className="w-full cursor-pointer py-3 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">{value}</label>
                             </div>
+                        </li>
+
+                            
                         )
                     })}
 
-
-
-
-                </div>
+                </ul>
 
                 <div className="flex justify-center mt-10 items-center">
 
