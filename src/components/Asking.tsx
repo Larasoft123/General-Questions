@@ -9,13 +9,18 @@ import { QuestionSelect } from "./question-select"
 export function Asking() {
     const currentQuestion = useQuestionsStore(state => state.currentQuestion)
     const questions = useQuestionsStore(state => state.questions)
+    const reset = useQuestionsStore(state => state.reset)
 
 
 
 
- 
+
     return (
-        <section className="w-full p-4 h-full flex items-center justify-center">
+        <section className="w-full p-4 h-full relative flex items-center justify-center">
+
+
+
+
 
             <article>
                 <h1 className="text-2xl text-center text-zinc-500 text-balance">{questions[currentQuestion].question}</h1>
@@ -42,6 +47,11 @@ export function Asking() {
 
                     <div className="py-8">
                         <Footer />
+
+                        <div className="mt-20">
+                            <button className="bg-sky-600 hover:bg-sky-500 border border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" onClick={reset}>Reiniciar</button>
+                        </div>
+
                     </div>
 
                 </div>
