@@ -19,5 +19,6 @@ export enum App_status{
 export const typeQuestions = {
   GEO: "Geografía",
   SCIENCE: "Ciencia",
+  HISTORY: "Historia",
 
 } as const
