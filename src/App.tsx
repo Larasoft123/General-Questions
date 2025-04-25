@@ -6,7 +6,7 @@ import { Asking } from "./components/Asking"
 import { Finish } from "./components/Finish"
 import { Toaster } from "sonner"
 import { ChooseQuestions } from "./components/chosee-questions"
-import { useEffect } from "react"
+
 
 
 
@@ -18,32 +18,6 @@ import { useEffect } from "react"
 function App() {
 
   const APP_STATUS = useQuestionsStore(state => state.App_status)
-  const reset = useQuestionsStore(state => state.reset)
-
-
-
-  useEffect(() => {
-    const localStorageData = localStorage.getItem("questionsStore")
-    if (!localStorageData) {
-      localStorage.clear()
-      return
-    }
-
-    try {
-      const parsedData = JSON.parse(localStorageData)
-      if (!parsedData[0]){
-        localStorage.clear()
-        reset()
-        return
-      } 
-
-    } catch (error) {
-      localStorage.clear()
-      console.error("Error parsing localStorage data:", error);
-    }
-   
-
-  }, [reset])
 
 
 
