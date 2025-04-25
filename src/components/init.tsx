@@ -9,6 +9,7 @@ export function Init() {
 
     const setQuestions = useQuestionsStore(state => state.setQuestions)
     const Questions = useQuestionsStore(state => state.questions)
+    const selectedTypesQuestions = useQuestionsStore(state => state.selectedTypesQuestions)
 
     const nroOptions = useRef([
         Math.round(Questions.length / 5),
@@ -34,13 +35,9 @@ export function Init() {
 
 
 
-
-
-
-
     return (
         <div className='w-full h-full -translate-y-20  p-4 relative flex-col flex justify-center items-center my-6'>
-            <h1 className="font-semibold mb-12 text-4xl text-indigo-700 opacity-95 text-center text-balance">Cuanto sabes de capitales del mundo</h1>
+            <h1 className="font-semibold mb-12 text-4xl text-indigo-700 opacity-95 text-center text-balance">Cuanto sabes de {selectedTypesQuestions?.join(", ")} </h1>
 
             <form onSubmit={handleSubmit} className="flex w-full flex-col text-center justify-center items-center">
                 <label htmlFor="numero-paises" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Selecciona cuantas preguntas quieres</label>
