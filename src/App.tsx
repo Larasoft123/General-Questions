@@ -6,6 +6,7 @@ import { Asking } from "./components/Asking"
 import { Finish } from "./components/Finish"
 import { Toaster } from "sonner"
 import { ChooseQuestions } from "./components/chosee-questions"
+import { useEffect } from "react"
 
 
 
@@ -17,6 +18,27 @@ import { ChooseQuestions } from "./components/chosee-questions"
 function App() {
 
   const APP_STATUS = useQuestionsStore(state => state.App_status)
+
+
+
+  useEffect(() => {
+    const localStorageData = localStorage.getItem("questionsStore")
+    if (!localStorageData) {
+      localStorage.clear()
+      return
+    }
+
+    try {
+      const parsedData = JSON.parse(localStorageData)
+      if (!parsedData[0]) localStorage.clear() 
+
+    } catch (error) {
+      localStorage.clear()
+      console.error("Error parsing localStorage data:", error);
+    }
+   
+
+  }, [])
 
 
 
@@ -33,10 +55,6 @@ function App() {
         {APP_STATUS == App_status.INIT && <Init />}
         {APP_STATUS == App_status.ASKING && <Asking />}
         {APP_STATUS == App_status.FINISH && <Finish />}
-
-
-
-
       </main>
     </div>
   )
