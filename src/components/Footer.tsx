@@ -5,7 +5,7 @@ export function Footer() {
 
 
     return (
-        <footer className="flex justify-center gap-8 items-center  text-xs   text-gray-700">
+        <footer className="flex justify-center gap-8 text-center items-center  text-xs   text-gray-700">
             <div className="text-indigo-700">
                 Sin contestar: {questions.filter(q => q.userAnswer === undefined).length}/{questions.length}
             </div>
