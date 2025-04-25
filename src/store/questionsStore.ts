@@ -129,6 +129,7 @@ export const useQuestionsStore = create<QuestionsStore>()(
 
       reset() {
         set({
+          selectedTypesQuestions: null,
           currentQuestion: 0,
           questions: totalQuestions,
           App_status: App_status.CHOSE_TYPE_QUESTIONS,
