@@ -18,6 +18,7 @@ import { useEffect } from "react"
 function App() {
 
   const APP_STATUS = useQuestionsStore(state => state.App_status)
+  const reset = useQuestionsStore(state => state.reset)
 
 
 
@@ -30,7 +31,11 @@ function App() {
 
     try {
       const parsedData = JSON.parse(localStorageData)
-      if (!parsedData[0]) localStorage.clear() 
+      if (!parsedData[0]){
+        localStorage.clear()
+        reset()
+        return
+      } 
 
     } catch (error) {
       localStorage.clear()
@@ -38,7 +43,7 @@ function App() {
     }
    
 
-  }, [])
+  }, [reset])
 
 
 
