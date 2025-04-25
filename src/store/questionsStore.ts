@@ -5,11 +5,11 @@ import confetti from "canvas-confetti";
 import { devtools } from "zustand/middleware";
 import { persist } from "zustand/middleware";
 
-
 interface QuestionsStore {
   currentQuestion: number;
   questions: Question[];
   App_status: App_status;
+  selectedTypesQuestions: string[] | null;
   setQuestions: (nroQuestions: number) => void;
   setUserAnswer: (answer: number) => void;
   setQuestionsType: (types: string[]) => void;
@@ -51,13 +51,18 @@ function DoConffeti() {
 export const useQuestionsStore = create<QuestionsStore>()(
   persist(
     devtools((set, get) => ({
+      // estados de la store
       currentQuestion: 0,
       questions: [],
       App_status: App_status.CHOSE_TYPE_QUESTIONS,
       win: null,
+      selectedTypesQuestions: null,
+      // fin estados de la store
 
+
+      // funciones de la store
       setQuestions(nroQuestions: number) {
-        const questionsArray = get().questions
+        const questionsArray = get().questions;
         const newQuestions = questionsArray
           .sort(() => Math.random() - 0.5)
           .slice(0, nroQuestions);
@@ -72,13 +77,13 @@ export const useQuestionsStore = create<QuestionsStore>()(
       setQuestionsType(types: string[]) {
         if (types.length === 0) return;
 
-        const dataArray = structuredClone(totalQuestions)
+        const dataArray = structuredClone(totalQuestions);
 
-        const filteredQuestions = dataArray.filter((question) => types.includes(question.type))
+        const filteredQuestions = dataArray.filter((question) =>
+          types.includes(question.type)
+        );
 
-        set({questions: filteredQuestions,App_status: App_status.INIT})
-       
-              
+        set({ selectedTypesQuestions: types, questions: filteredQuestions, App_status: App_status.INIT });
       },
 
       checkWin() {
@@ -131,6 +136,7 @@ export const useQuestionsStore = create<QuestionsStore>()(
         });
       },
 
+      // funciones para navegacion de preguntas
       GoNext() {
         if (get().currentQuestion == get().questions.length - 1) return;
 
@@ -141,7 +147,9 @@ export const useQuestionsStore = create<QuestionsStore>()(
         if (get().currentQuestion == 0) return;
         set({ currentQuestion: get().currentQuestion - 1 });
       },
-    })), {
+      // fin funciones store
+    })),
+    {
       name: "questionsStore", // unique name
       // (optional) by default the 'localStorage' is used
     }
