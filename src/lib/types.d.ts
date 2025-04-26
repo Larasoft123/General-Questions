@@ -20,5 +20,6 @@ export const typeQuestions = {
   GEO: "Geografía",
   SCIENCE: "Ciencia",
   HISTORY: "Historia",
+  BIOLOGY: "Biología",
 
 } as const
