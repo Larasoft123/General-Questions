@@ -2717,4 +2717,677 @@ const historyArray: Question[] = [
   }
 ]
 
-export const totalQuestions = [...scienceArray, ...GeoArray, ...historyArray];
+const biologyArray: Question[] = [
+  // Nivel 1: Básico - Clasificación animal
+  {
+    question: "¿A qué clase de animales pertenecen los perros y los gatos?",
+    answers: ["Anfibios", "Reptiles", "Mamíferos", "Aves"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal es considerado el más grande del mundo?",
+    answers: ["Elefante africano", "Tiburón ballena", "Ballena azul", "Calamar gigante"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animales pertenecen al grupo de los artrópodos?",
+    answers: ["Peces", "Insectos", "Mamíferos", "Reptiles"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Cuál de estos animales es un mamífero marino?",
+    answers: ["Tiburón", "Delfín", "Pulpo", "Medusa"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal es conocido como el 'rey de la selva'?",
+    answers: ["Tigre", "León", "Jaguar", "Pantera"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  
+  // Nivel 1: Básico - Anatomía animal
+  {
+    question: "¿Qué órgano es responsable de bombear la sangre en los animales?",
+    answers: ["Pulmones", "Cerebro", "Corazón", "Hígado"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animales respiran a través de branquias?",
+    answers: ["Peces", "Mamíferos", "Aves", "Reptiles"],
+    correct: 0,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué estructura protege el cerebro de los vertebrados?",
+    answers: ["Columna vertebral", "Cráneo", "Costillas", "Pelvis"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animales tienen exoesqueleto?",
+    answers: ["Mamíferos", "Aves", "Insectos", "Peces"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué órgano utilizan los peces para mantener su flotabilidad?",
+    answers: ["Aletas", "Branquias", "Vejiga natatoria", "Escamas"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  
+  // Nivel 2: Básico-Intermedio - Adaptaciones animales
+  {
+    question: "¿Qué animal es conocido por su capacidad de cambiar de color?",
+    answers: ["Camaleón", "Iguana", "Cocodrilo", "Tortuga"],
+    correct: 0,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal puede regenerar sus extremidades?",
+    answers: ["Salamandra", "Rana", "Cocodrilo", "Tortuga"],
+    correct: 0,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal es conocido por su capacidad de hibernar?",
+    answers: ["León", "Oso", "Jirafa", "Elefante"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal tiene la mordida más fuerte del reino animal?",
+    answers: ["León", "Tiburón blanco", "Cocodrilo de agua salada", "Hipopótamo"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal puede sobrevivir sin agua durante más tiempo?",
+    answers: ["Camello", "Rata canguro", "Oso polar", "Koala"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  
+  // Nivel 2: Básico-Intermedio - Comportamiento animal
+  {
+    question: "¿Qué animales viven en colonias organizadas con una reina?",
+    answers: ["Leones", "Hormigas", "Delfines", "Águilas"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal construye presas en los ríos?",
+    answers: ["Nutria", "Castor", "Cocodrilo", "Salmón"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animales utilizan la ecolocalización para navegar?",
+    answers: ["Águilas", "Murciélagos", "Serpientes", "Tortugas"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal es conocido por su comportamiento de 'jugar al muerto'?",
+    answers: ["Zarigüeya", "Armadillo", "Zorro", "Mapache"],
+    correct: 0,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal realiza la migración más larga?",
+    answers: ["Elefante africano", "Ballena jorobada", "Mariposa monarca", "Golondrina ártica"],
+    correct: 3,
+    type: typeQuestions.BIOLOGY,
+  },
+  
+  // Nivel 3: Intermedio - Biología marina
+  {
+    question: "¿Qué animal marino puede vivir 'eternamente'?",
+    answers: ["Tortuga marina", "Medusa inmortal", "Ballena boreal", "Cangrejo herradura"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué criatura marina tiene tres corazones?",
+    answers: ["Pulpo", "Calamar", "Medusa", "Estrella de mar"],
+    correct: 0,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué pez puede producir electricidad para defenderse?",
+    answers: ["Pez globo", "Pez payaso", "Anguila eléctrica", "Pez espada"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal marino tiene la sangre azul?",
+    answers: ["Pulpo", "Cangrejo herradura", "Delfín", "Tiburón"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué criatura marina puede cambiar de sexo durante su vida?",
+    answers: ["Pez payaso", "Delfín", "Tiburón", "Ballena"],
+    correct: 0,
+    type: typeQuestions.BIOLOGY,
+  },
+  
+  // Nivel 3: Intermedio - Récords animales
+  {
+    question: "¿Cuál es el animal terrestre más rápido del mundo?",
+    answers: ["Leopardo", "Guepardo", "Antílope", "León"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Cuál es el animal más venenoso del mundo?",
+    answers: ["Cobra real", "Avispa de mar", "Rana dardo venenoso", "Escorpión"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal puede saltar más alto en relación a su tamaño?",
+    answers: ["Pulga", "Saltamontes", "Rana", "Canguro"],
+    correct: 0,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Cuál es el insecto más fuerte en relación a su peso?",
+    answers: ["Hormiga", "Escarabajo rinoceronte", "Mantis religiosa", "Araña"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal tiene la mayor longevidad?",
+    answers: ["Tortuga gigante", "Ballena boreal", "Elefante", "Loro"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  
+  // Nivel 4: Intermedio-Avanzado - Genética y evolución
+  {
+    question: "¿Qué animal es considerado un 'fósil viviente' por haber cambiado poco en millones de años?",
+    answers: ["Tiburón blanco", "Cocodrilo", "Celacanto", "Tortuga"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal es el pariente vivo más cercano a los dinosaurios?",
+    answers: ["Cocodrilo", "Lagarto", "Ave", "Tortuga"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué proceso evolutivo ocurre cuando especies no relacionadas desarrollan características similares?",
+    answers: ["Selección natural", "Convergencia evolutiva", "Especiación", "Deriva genética"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal tiene un ADN más similar al humano?",
+    answers: ["Gorila", "Chimpancé", "Orangután", "Bonobo"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué característica es un ejemplo de adaptación evolutiva en los camellos?",
+    answers: ["Su altura", "Sus jorobas", "Su color", "Sus pezuñas"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  
+  // Nivel 4: Intermedio-Avanzado - Biología celular
+  {
+    question: "¿Qué orgánulo celular es responsable de la producción de energía?",
+    answers: ["Núcleo", "Ribosoma", "Mitocondria", "Aparato de Golgi"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué proceso celular produce células hijas idénticas a la célula madre?",
+    answers: ["Meiosis", "Mitosis", "Fecundación", "Diferenciación"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué tipo de célula no tiene núcleo definido?",
+    answers: ["Célula animal", "Célula vegetal", "Célula procariota", "Célula eucariota"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué estructura celular contiene el material genético?",
+    answers: ["Mitocondria", "Ribosoma", "Núcleo", "Lisosoma"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué proceso utilizan las células para obtener energía de la glucosa?",
+    answers: ["Fotosíntesis", "Respiración celular", "Fermentación", "Ósmosis"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  
+  // Nivel 5: Avanzado - Fisiología animal
+  {
+    question: "¿Qué animal tiene la mayor presión sanguínea?",
+    answers: ["Elefante", "Jirafa", "Ballena", "Humano"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal puede ver la luz ultravioleta?",
+    answers: ["Perro", "Gato", "Abeja", "Murciélago"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal tiene el cerebro más grande en relación a su tamaño corporal?",
+    answers: ["Delfín", "Humano", "Elefante", "Cuervo"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal puede detectar campos electromagnéticos?",
+    answers: ["Tiburón", "Delfín", "Águila", "Serpiente"],
+    correct: 0,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal tiene la mayor cantidad de neuronas en su cerebro después de los humanos?",
+    answers: ["Delfín", "Elefante", "Chimpancé", "Cuervo"],
+    correct: 0,
+    type: typeQuestions.BIOLOGY,
+  },
+  
+  // Nivel 5: Avanzado - Taxonomía y clasificación
+  {
+    question: "¿A qué orden pertenecen los murciélagos?",
+    answers: ["Carnivora", "Chiroptera", "Rodentia", "Primates"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿A qué familia pertenecen los grandes felinos como leones y tigres?",
+    answers: ["Canidae", "Ursidae", "Felidae", "Mustelidae"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿A qué clase pertenecen las ranas y los sapos?",
+    answers: ["Reptilia", "Amphibia", "Actinopterygii", "Mammalia"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿A qué filo pertenecen los insectos, arácnidos y crustáceos?",
+    answers: ["Chordata", "Mollusca", "Arthropoda", "Annelida"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿A qué orden pertenecen los delfines y las ballenas?",
+    answers: ["Carnivora", "Cetacea", "Sirenia", "Pinnipedia"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  
+  // Nivel 6: Muy avanzado - Biología molecular
+  {
+    question: "¿Qué molécula almacena la información genética?",
+    answers: ["Proteína", "Lípido", "Carbohidrato", "ADN"],
+    correct: 3,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué proceso convierte la información del ADN en proteínas?",
+    answers: ["Replicación", "Transcripción y traducción", "Mitosis", "Meiosis"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué molécula transporta los aminoácidos durante la síntesis de proteínas?",
+    answers: ["ARN mensajero", "ARN de transferencia", "ARN ribosómico", "ADN"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué enzima es responsable de la replicación del ADN?",
+    answers: ["ADN polimerasa", "ARN polimerasa", "Ligasa", "Helicasa"],
+    correct: 0,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué proceso permite a las células producir células sexuales con la mitad del número de cromosomas?",
+    answers: ["Mitosis", "Meiosis", "Fecundación", "Replicación"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  
+  // Nivel 6: Muy avanzado - Ecología y ecosistemas
+  {
+    question: "¿Qué término describe la relación donde ambas especies se benefician?",
+    answers: ["Parasitismo", "Comensalismo", "Mutualismo", "Competencia"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué nivel trófico ocupan los consumidores primarios?",
+    answers: ["Productores", "Herbívoros", "Carnívoros", "Descomponedores"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué término describe el conjunto de todos los ecosistemas de la Tierra?",
+    answers: ["Bioma", "Comunidad", "Biosfera", "Hábitat"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué proceso describe el cambio gradual en la composición de especies de un ecosistema a lo largo del tiempo?",
+    answers: ["Adaptación", "Evolución", "Sucesión ecológica", "Especiación"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué término describe la capacidad máxima de individuos que un ecosistema puede sostener?",
+    answers: ["Biodiversidad", "Biomasa", "Capacidad de carga", "Nicho ecológico"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  
+  // Nivel 7: Especialista - Biología comparada
+  {
+    question: "¿Qué animal tiene el sistema inmunológico más simple?",
+    answers: ["Esponja marina", "Medusa", "Lombriz de tierra", "Estrella de mar"],
+    correct: 0,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal tiene el sistema nervioso más complejo entre los invertebrados?",
+    answers: ["Pulpo", "Araña", "Cangrejo", "Abeja"],
+    correct: 0,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal tiene la mayor diversidad de conos en sus ojos, permitiéndole ver más colores?",
+    answers: ["Águila", "Camaleón", "Mantis marina", "Humano"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal tiene el sistema digestivo más simple?",
+    answers: ["Planaria", "Hidra", "Lombriz de tierra", "Medusa"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal tiene el sistema respiratorio más eficiente?",
+    answers: ["Humano", "Ave", "Pez", "Insecto"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  
+  // Nivel 7: Especialista - Biología del desarrollo
+  {
+    question: "¿Qué proceso describe la transformación de una larva en un adulto?",
+    answers: ["Metamorfosis", "Diferenciación", "Morfogénesis", "Organogénesis"],
+    correct: 0,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal pasa por metamorfosis completa?",
+    answers: ["Saltamontes", "Cucaracha", "Mariposa", "Araña"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué término describe el desarrollo embrionario fuera del cuerpo materno?",
+    answers: ["Vivíparo", "Ovíparo", "Ovovivíparo", "Partenogénesis"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal puede regenerar su cuerpo completo a partir de un pequeño fragmento?",
+    answers: ["Estrella de mar", "Planaria", "Salamandra", "Lagartija"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué proceso permite a algunos animales reproducirse sin fertilización?",
+    answers: ["Gemación", "Fragmentación", "Partenogénesis", "Conjugación"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  
+  // Nivel 8: Muy especialista - Biología molecular avanzada
+  {
+    question: "¿Qué proceso permite la edición precisa del genoma?",
+    answers: ["PCR", "Secuenciación", "CRISPR-Cas9", "Hibridación"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué tipo de ARN forma parte estructural de los ribosomas?",
+    answers: ["ARN mensajero", "ARN de transferencia", "ARN ribosómico", "ARN pequeño nuclear"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué proceso post-transcripcional elimina los intrones del ARN mensajero?",
+    answers: ["Traducción", "Replicación", "Splicing", "Poliadenilación"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué tipo de mutación implica la inserción o eliminación de nucleótidos?",
+    answers: ["Mutación puntual", "Mutación por cambio de marco", "Mutación silenciosa", "Mutación sin sentido"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué proceso epigenético modifica la expresión génica sin alterar la secuencia de ADN?",
+    answers: ["Metilación del ADN", "Mutación", "Recombinación", "Transposición"],
+    correct: 0,
+    type: typeQuestions.BIOLOGY,
+  },
+  
+  // Nivel 8: Muy especialista - Fisiología comparada
+  {
+    question: "¿Qué animal tiene la mayor tasa metabólica en relación a su masa corporal?",
+    answers: ["Colibrí", "Musaraña", "Ratón", "Murciélago"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal puede sobrevivir sin oxígeno por más tiempo?",
+    answers: ["Tortuga pintada", "Carpa", "Rana leopardo", "Salamandra"],
+    correct: 0,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal tiene la mayor concentración de hemoglobina en su sangre?",
+    answers: ["Ballena", "Foca de Weddell", "Cabra montesa", "Camello"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal tiene la mayor resistencia a la radiación?",
+    answers: ["Cucaracha", "Tardígrado", "Escorpión", "Cangrejo herradura"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal puede soportar las temperaturas más extremas?",
+    answers: ["Oso polar", "Camello", "Tardígrado", "Pingüino emperador"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  
+  // Nivel 9: Súper especialista - Neurobiología
+  {
+    question: "¿Qué animal tiene el sistema nervioso más simple?",
+    answers: ["Esponja marina", "Hidra", "Planaria", "Medusa"],
+    correct: 0,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué neurotransmisor está asociado con la sensación de placer y recompensa?",
+    answers: ["Serotonina", "Dopamina", "Acetilcolina", "GABA"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué estructura cerebral es responsable de la formación de nuevos recuerdos?",
+    answers: ["Amígdala", "Hipocampo", "Cerebelo", "Tálamo"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal tiene la mayor proporción de cerebro respecto a su cuerpo?",
+    answers: ["Humano", "Delfín", "Hormiga", "Colibrí"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué células del sistema nervioso no conducen impulsos nerviosos pero dan soporte a las neuronas?",
+    answers: ["Células de Schwann", "Células gliales", "Oligodendrocitos", "Astrocitos"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  
+  // Nivel 9: Súper especialista - Inmunología
+  {
+    question: "¿Qué células son las principales responsables de la respuesta inmune adaptativa?",
+    answers: ["Neutrófilos", "Macrófagos", "Linfocitos", "Basófilos"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal tiene el sistema inmunológico más potente conocido?",
+    answers: ["Tiburón", "Cocodrilo", "Humano", "Murciélago"],
+    correct: 0,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué proteínas producidas por los linfocitos B neutralizan patógenos?",
+    answers: ["Citocinas", "Anticuerpos", "Complementos", "Interferones"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal puede regenerar órganos sin formación de cicatrices?",
+    answers: ["Salamandra", "Axolotl", "Planaria", "Estrella de mar"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué células son las primeras en responder a una infección?",
+    answers: ["Linfocitos T", "Linfocitos B", "Neutrófilos", "Células dendríticas"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  
+  // Nivel 10: Experto absoluto - Biología evolutiva avanzada
+  {
+    question: "¿Qué concepto evolutivo describe la persistencia de características que ya no tienen función?",
+    answers: ["Homología", "Analogía", "Vestigialidad", "Convergencia"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal es considerado un ejemplo de evolución convergente con los mamíferos?",
+    answers: ["Cocodrilo", "Tortuga", "Ornitorrinco", "Marsopa"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué teoría explica la evolución por cambios rápidos seguidos de períodos de estabilidad?",
+    answers: ["Gradualismo", "Equilibrio puntuado", "Neutralismo", "Neodarwinismo"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué animal es considerado un ejemplo de radiación adaptativa?",
+    answers: ["Pinzones de Darwin", "Tigre", "Ballena", "Elefante"],
+    correct: 0,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué concepto describe la transferencia de genes entre especies diferentes?",
+    answers: ["Herencia vertical", "Transferencia horizontal de genes", "Hibridación", "Introgresión"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  
+  // Nivel 10: Experto absoluto - Biología molecular extrema
+  {
+    question: "¿Qué enzima puede sintetizar ADN a partir de ARN?",
+    answers: ["ADN polimerasa", "ARN polimerasa", "Transcriptasa inversa", "Helicasa"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué proceso celular recicla componentes celulares dañados?",
+    answers: ["Apoptosis", "Necrosis", "Autofagia", "Fagocitosis"],
+    correct: 2,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué estructura del ADN permite la expresión diferencial de genes en diferentes tejidos?",
+    answers: ["Promotor", "Potenciador", "Silenciador", "Operón"],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué mecanismo permite a las células detectar y reparar daños en el ADN?",
+    answers: ["Puntos de control del ciclo celular", "Apoptosis", "Autofagia", "Senescencia"],
+    correct: 0,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué proceso permite a las células diferenciarse en tipos celulares específicos?",
+    answers: ["Determinación", "Inducción", "Morfogénesis", "Expresión génica diferencial"],
+    correct: 3,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué tipo de ARN no codificante regula la expresión génica?",
+    answers: ["ARN mensajero", "ARN de transferencia", "ARN ribosómico", "microARN"],
+    correct: 3,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué es la transdiferenciación celular?",
+    answers: [
+      "El proceso por el cual una célula diferenciada se convierte directamente en otro tipo de célula diferenciada sin pasar por un estado pluripotente",
+      "El proceso por el cual una célula madre se diferencia en una célula especializada",
+      "El proceso por el cual una célula regresa a un estado pluripotente",
+      "El proceso por el cual una célula se divide para formar dos células hijas idénticas"
+    ],
+    correct: 0,
+    type: typeQuestions.BIOLOGY,
+  },
+  {
+    question: "¿Qué hace la transdiferenciación celular?",
+    answers: [
+     
+      "Permite que las células madre embrionarias se diferencien en tejidos específicos",
+      "Permite la reprogramación directa de células diferenciadas a otros tipos celulares sin pasar por un estado pluripotente",
+      "Revierte células adultas a un estado de célula madre pluripotente",
+      "Detiene el proceso de diferenciación celular para mantener células en estado indiferenciado"
+    ],
+    correct: 1,
+    type: typeQuestions.BIOLOGY,
+  }
+]
+
+export const totalQuestions = [...scienceArray, ...GeoArray, ...historyArray, ...biologyArray];
+
+
