@@ -4,14 +4,25 @@ export interface Question {
   type: string,
   correct: number
   userAnswer?: number,
+  level: LEVELS,
   
 };
 
 export enum App_status{
   CHOSE_TYPE_QUESTIONS = "CHOSE_TYPE_QUESTIONS",
+  CHOSE_LEVELS = "CHOSE_LEVELS",
   INIT = "INIT",
   FINISH = "FINISH",
   ASKING = "ASKING",
+}
+
+export enum LEVELS {
+  FACIL = "Fácil",
+  NORMAL = "Normal",
+  DIFICIL = "Difícil",
+  EXPERTO = "Experto",
+  MAESTRO = "Maestro",
+  IMPOSIBLE = "Imposible",
 }
 
 
