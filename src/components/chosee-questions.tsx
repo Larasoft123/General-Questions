@@ -40,8 +40,7 @@ export function ChooseQuestions() {
             <form onSubmit={handleSubmit} className="flex -translate-y-6 flex-col p-4 justify-center items-center" >
 
                 <h3 className="text-xl text-indigo-700 font-semibold text-balance text-center">Selecciona los tipos de preguntas que quieres</h3>
-
-
+                
                 <ul className="w-48 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg mt-6">
                     {Object.values(typeQuestions).map((value, index) => {
                         return (
