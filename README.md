@@ -1,50 +1,88 @@
-# React + TypeScript + Vite
+# 🌟 General Question App 🌟
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+¡Bienvenido a **General Question App**! Esta es una aplicación interactiva de preguntas y respuestas desarrollada con **React**, **TypeScript** y **Vite**. Ideal para aprender y divertirse mientras pones a prueba tus conocimientos en diferentes áreas.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologías Utilizadas
 
-## Expanding the ESLint configuration
+- **React**: Biblioteca para construir interfaces de usuario.
+- **TypeScript**: Tipado estático para JavaScript.
+- **Vite**: Herramienta de desarrollo rápida y ligera.
+- **TailwindCSS**: Framework de CSS para estilos rápidos y modernos.
+- **Sonner**: Biblioteca para notificaciones.
+- **Zustand**: Manejo de estado simple y escalable.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## 🎯 Propósito de la Aplicación
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+La aplicación está diseñada para:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- Probar tus conocimientos en diferentes áreas como ciencia, geografía, historia y biología.
+- Ofrecer una experiencia interactiva y educativa.
+- Ser una base para proyectos educativos o de entretenimiento.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+---
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 🛠️ Cómo Inicializar el Proyecto
+
+Sigue estos pasos para ejecutar el proyecto en tu máquina local:
+
+1. **Clona el repositorio**:
+   ```bash
+   git clone https://github.com/tu-usuario/general-question-app.git
+   cd general-question-app
+   ```
+
+2. **Instala las dependencias**:
+   ```bash
+   npm install
+   ```
+
+3. **Inicia el servidor de desarrollo**:
+   ```bash
+   npm run dev
+   ```
+
+4. **Abre la aplicación**:
+   Ve a [http://localhost:5173](http://localhost:5173) en tu navegador.
+
+---
+
+## 🤝 Cómo Colaborar
+
+¡Contribuir es fácil! Sigue estos pasos:
+
+1. Haz un fork del repositorio.
+2. Crea una nueva rama para tu funcionalidad o corrección:
+   ```bash
+   git checkout -b mi-nueva-funcionalidad
+   ```
+3. Realiza tus cambios y haz un commit:
+   ```bash
+   git commit -m "Agrega mi nueva funcionalidad"
+   ```
+4. Sube tus cambios:
+   ```bash
+   git push origin mi-nueva-funcionalidad
+   ```
+5. Abre un Pull Request en el repositorio original.
+
+---
+
+## 📜 Licencia
+
+Este proyecto está bajo una **licencia abierta**. Siéntete libre de usar, modificar y distribuir el código como desees.
+
+---
+
+## 👤 Autor
+
+**Tu Nombre**  
+Desarrollador Frontend apasionado por la tecnología y el aprendizaje.  
+[GitHub](https://github.com/tu-usuario) | [LinkedIn](https://linkedin.com/in/tu-usuario)
+
+---
+
+¡Gracias por visitar este proyecto! Si tienes alguna sugerencia o encuentras un problema, no dudes en abrir un issue o contribuir. 🚀
