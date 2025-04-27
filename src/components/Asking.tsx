@@ -25,13 +25,13 @@ export function Asking() {
             <article>
                 <h1 className="text-2xl text-center text-zinc-500 text-balance">{questions[currentQuestion].question}</h1>
                 <div className="flex flex-col">
+                    
                     <header className="flex text-center py-4 px-2 justify-between items-center text-sm text-gray-700">
                         <NextButtons />
                         <span> {currentQuestion + 1}/ {questions.length}</span>
-
-
-
                     </header>
+
+                   
 
                     <div className="">
                         <ul className="flex flex-col gap-4">
@@ -45,7 +45,12 @@ export function Asking() {
                     </div>
 
 
-                    <div className="py-8">
+                    <div className="py-2">
+                        <div className="flex py-4 justify-center items-center"> 
+                            <p className="text-sm font-semibold text-balance text-sky-500">{questions[currentQuestion].level ?? null} </p>
+                        </div>
+
+
                         <Footer />
 
                         <div className="mt-20">
