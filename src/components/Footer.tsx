@@ -17,7 +17,7 @@ export function Footer() {
             <div className="text-red-600">
                 Incorrectas: {questions.filter(q => q.userAnswer !== undefined && q.userAnswer !== q.correct).length}/{questions.length}
             </div>
-
+            
         </footer>
     )
 
