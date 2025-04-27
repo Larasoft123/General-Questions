@@ -6,6 +6,7 @@ import { Asking } from "./components/Asking"
 import { Finish } from "./components/Finish"
 import { Toaster } from "sonner"
 import { ChooseQuestions } from "./components/chosee-questions"
+import { ChooseLevels } from "./components/choose-levels"
 
 
 
@@ -31,6 +32,7 @@ function App() {
       <Toaster />
       <main className='max-w-4xl h-full mx-auto px-4 py-2 w-full text-balance'>
         {APP_STATUS == App_status.CHOSE_TYPE_QUESTIONS && <ChooseQuestions />}
+        {APP_STATUS == App_status.CHOSE_LEVELS && <ChooseLevels />}
         {APP_STATUS == App_status.INIT && <Init />}
         {APP_STATUS == App_status.ASKING && <Asking />}
         {APP_STATUS == App_status.FINISH && <Finish />}
