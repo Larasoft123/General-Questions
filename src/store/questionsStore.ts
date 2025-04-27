@@ -12,6 +12,7 @@ interface QuestionsStore {
   selectedTypesQuestions: string[] | null;
   setQuestions: (nroQuestions: number) => void;
   setUserAnswer: (answer: number) => void;
+  setQuestionsLevel: (levels: string[]) => void;
   setQuestionsType: (types: string[]) => void;
   GoNext: () => void;
   GoBack: () => void;
@@ -83,8 +84,20 @@ export const useQuestionsStore = create<QuestionsStore>()(
           types.includes(question.type)
         );
 
-        set({ selectedTypesQuestions: types, questions: filteredQuestions, App_status: App_status.INIT });
+        set({ selectedTypesQuestions: types, questions: filteredQuestions, App_status: App_status.CHOSE_LEVELS });
       },
+
+      setQuestionsLevel(levels: string[]){
+        if(levels.length === 0) return;
+        const questions = get().questions;
+
+        const filteresQuestions = questions.filter((q) => levels.some(l => l.includes(q.level)))
+        console.log(filteresQuestions)
+
+        set({ questions: filteresQuestions, App_status: App_status.INIT });
+      },
+
+
 
       checkWin() {
         const questions = get().questions;
