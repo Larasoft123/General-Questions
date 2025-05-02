@@ -108,7 +108,7 @@ export const useQuestionsStore = create<QuestionsStore>()(
         );
 
         if (correctQuestions.length >= Math.round(totalQuestions / 2)) {
-          console.log("seteado win");
+          
           DoConffeti();
           set({ win: true });
           return;
@@ -128,9 +128,10 @@ export const useQuestionsStore = create<QuestionsStore>()(
         });
 
         if (get().currentQuestion == get().questions.length - 1) {
-          get().checkWin();
-
-          return set({ App_status: App_status.FINISH });
+          setTimeout(() => {
+            get().checkWin();
+            return set({ App_status: App_status.FINISH });  
+          }, 1000);
         }
 
         setTimeout(() => {
