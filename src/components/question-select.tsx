@@ -24,6 +24,25 @@ export function QuestionSelect({answer,index} : {answer: string, index: number})
     
     
         const handleClick = (index: number) => () => {
+            const question = questions[currentQuestion]
+
+            // si es correcta reproducir sonido de correcto
+            if (question.correct === index) {
+                const url = "src/assets/sounds/correct.mp3"
+                const audio = new Audio(url)
+                audio.volume = 1
+                audio.play()
+            }
+
+            // si es incorrecta reproducir sonido de incorrecto
+            if (question.correct !== index) {
+                const url = "src/assets/sounds/incorrect.mp3"
+                const audio = new Audio(url)
+                audio.volume = 0.6
+                audio.play()
+            }
+
+
             setUserAnswer(index)
         }
     
