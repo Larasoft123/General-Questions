@@ -1,9 +1,10 @@
 import { create } from "zustand";
-import { totalQuestions } from "../lib/utils.d";
+import { newTotalQuestions } from "../lib/utils";
 import { Question, App_status } from "../lib/types.d";
 import confetti from "canvas-confetti";
 import { devtools } from "zustand/middleware";
 import { persist } from "zustand/middleware";
+import { shuffleAnswers } from "../lib/shuffleAnswers";
 
 interface QuestionsStore {
   currentQuestion: number;
@@ -66,9 +67,11 @@ export const useQuestionsStore = create<QuestionsStore>()(
         const questionsArray = get().questions;
         const newQuestions = questionsArray
           .sort(() => Math.random() - 0.5)
-          .slice(0, nroQuestions);
+          .slice(0, nroQuestions)
+          .map((question) => shuffleAnswers({question}))
 
         // setear el array questions con el numero de preguntas que se le pase y hacerlo al azar
+        console.log({newQuestions})
         set({
           questions: newQuestions,
           App_status: App_status.ASKING,
@@ -78,12 +81,13 @@ export const useQuestionsStore = create<QuestionsStore>()(
       setQuestionsType(types: string[]) {
         if (types.length === 0) return;
 
-        const dataArray = structuredClone(totalQuestions);
+        const dataArray = structuredClone(newTotalQuestions)
 
         const filteredQuestions = dataArray.filter((question) =>
           types.includes(question.type)
-        );
+        )
 
+      
         set({ selectedTypesQuestions: types, questions: filteredQuestions, App_status: App_status.CHOSE_LEVELS });
       },
 
@@ -92,7 +96,7 @@ export const useQuestionsStore = create<QuestionsStore>()(
         const questions = get().questions;
 
         const filteresQuestions = questions.filter((q) => levels.some(l => l.includes(q.level)))
-        console.log(filteresQuestions)
+        
 
         set({ questions: filteresQuestions, App_status: App_status.INIT });
       },
@@ -101,13 +105,13 @@ export const useQuestionsStore = create<QuestionsStore>()(
 
       checkWin() {
         const questions = get().questions;
-        const totalQuestions = questions.length;
+        const totalQuestionsLenght = questions.length;
 
         const correctQuestions = questions.filter(
           (q) => q.userAnswer === q.correct
         );
 
-        if (correctQuestions.length >= Math.round(totalQuestions / 2)) {
+        if (correctQuestions.length >= Math.round(totalQuestionsLenght / 2)) {
           
           DoConffeti();
           set({ win: true });
@@ -145,7 +149,7 @@ export const useQuestionsStore = create<QuestionsStore>()(
         set({
           selectedTypesQuestions: null,
           currentQuestion: 0,
-          questions: totalQuestions,
+          questions: newTotalQuestions,
           App_status: App_status.CHOSE_TYPE_QUESTIONS,
           win: null,
         });
