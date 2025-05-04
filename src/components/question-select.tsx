@@ -28,7 +28,7 @@ export function QuestionSelect({answer,index} : {answer: string, index: number})
 
             // si es correcta reproducir sonido de correcto
             if (question.correct === index) {
-                const url = "public/sounds/correct.mp3"
+                const url = "/sounds/correct.mp3"
                 const audio = new Audio(url)
                 audio.volume = 1
                 audio.play()
@@ -36,7 +36,7 @@ export function QuestionSelect({answer,index} : {answer: string, index: number})
 
             // si es incorrecta reproducir sonido de incorrecto
             if (question.correct !== index) {
-                const url = "public/sounds/incorrect.mp3"
+                const url = "/sounds/incorrect.mp3"
                 const audio = new Audio(url)
                 audio.volume = 0.6
                 audio.play()
