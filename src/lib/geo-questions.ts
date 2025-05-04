@@ -2113,4 +2113,9 @@ const GeoArray: Question[] = [
     type: typeQuestions.GEO,
     level: LEVELS.IMPOSIBLE
   }
+
 ];
+
+
+
+
