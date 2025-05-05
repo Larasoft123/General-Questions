@@ -16,13 +16,13 @@ export function Asking() {
 
 
     return (
-        <section className="w-full p-4 h-full relative flex items-center justify-center">
+        <section className="w-full p-4 h-full  relative flex items-center justify-center">
 
 
 
 
 
-            <article>
+            <article  className="overflow-y-scroll">
                 <h1 className="text-xl pt-24 lg:pt-0 text-center text-zinc-500 text-balance">{questions[currentQuestion].question}</h1>
                 <div className="flex flex-col">
 
