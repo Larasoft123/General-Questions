@@ -23,7 +23,7 @@ export function Asking() {
 
 
             <article>
-                <h1 className="text-2xl text-center text-zinc-500 text-balance">{questions[currentQuestion].question}</h1>
+                <h1 className="text-2xl mt-4 lg:mt-0 text-center text-zinc-500 text-balance">{questions[currentQuestion].question}</h1>
                 <div className="flex flex-col">
 
                     <header className="flex text-center py-4 px-2 justify-between items-center text-sm text-gray-700">
