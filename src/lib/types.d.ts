@@ -5,8 +5,9 @@ export interface Question {
   correct: number
   userAnswer?: number,
   level: LEVELS,
-  
+  description?: string,
 };
+
 
 export enum App_status{
   CHOSE_TYPE_QUESTIONS = "CHOSE_TYPE_QUESTIONS",
@@ -32,5 +33,6 @@ export const typeQuestions = {
   SCIENCE: "Ciencia",
   HISTORY: "Historia",
   BIOLOGY: "Biología",
+  VZLA_HISTORY: "Historia de Venezuela",
 
 } as const
