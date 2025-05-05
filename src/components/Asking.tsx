@@ -16,7 +16,7 @@ export function Asking() {
 
 
     return (
-        <section className="w-full p-4 h-full  relative flex items-center justify-center">
+        <section className="w-full p-4 h-full overflow-y-scroll  relative flex items-center justify-center">
 
 
 
