@@ -1,4 +1,30 @@
 @import "tailwindcss";
+@plugin "daisyui";
 button{
     cursor: pointer !important;
+}
+
+.collapse {
+    
+        > input:is([type="checkbox"], [type="radio"]):checked ~ .collapse-title:after {
+            transform: translateY(-50%) rotate(225deg);
+        }
+  
+}
+
+.collapse-title:after {
+    position: absolute;
+    display: block;
+    height: 0.5rem /* 8px */;
+    width: 0.5rem /* 8px */;
+    transform: translateY(-100%) rotate(45deg);
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 0.2s;
+    top: 1.9rem /* 30.4px */;
+    inset-inline-end: 1.4rem /* 22.4px */;
+    content: "";
+    transform-origin: 75% 75%;
+    box-shadow: 2px 2px;
+    pointer-events: none;
 }
